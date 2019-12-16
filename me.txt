@@ -1,0 +1,38 @@
+Môi trường
+	Java 8
+	Hibernate: 5.x 
+	SpringMVC: 5.x + Spring boot 2.x
+	MySQL
+	Web server: Tomcat 7
+Cài đặt:
+	Eclipse
+	JDK8(Java 8)
+	Xampp
+Cài đặt biến môi trường
+	JAVA_HOME: C:\Program Files\Java\jdk1.8.0_231
+	Path -> Edit -> New(%JAVA_HOME%\bin)
+
+Giới thiệu về JDBC
+	JDBC là 1 cầu nối giữa Java Application và Database(Java Database Conectivity)
+	JDBC cũng cấp cho mình 1 số class và interface để tạo lập các kết nối giữa Java Application và Database
+	New project -> Maven -> Maven project(create a simple project)
+		Maven là 1 tool giúp quản lý các thư viện 1 cách dễ dàng hơn
+		Khi sử dụng thư viện của 1 bên thứ 3 thì chỉ cần khai báo các dependency
+	Group id: come.tedu
+	Artifact Id: jdbc-test
+	Packaging: war
+	Để kết nối giữa Java Application và Database thì cần phải có Driver
+	Driver: mysql connector maven 
+		keyword: mysql connector maven 5.1
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+	-> pom.xml -> <dependencies></dependencies> 
+	Maven sẽ tự động download source code, để kiểm tra xem có hay chưa thì kiểm tra ở Maven Dependencies
+	src/main/java -> Tạo ra class Main
+	localhost/phpmyadmin
+		Tạo 1 Schema: jdbc-test
+		Tạo bảng student: id, Name, Age, Address
