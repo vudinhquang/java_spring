@@ -90,3 +90,19 @@ Phần 1
 					Exporters: 
 						Domain code
 						Hibernate XML Mapping
+Phần 2
+	src/main/resources/hibernate.cfg.xml
+		Khai báo vị của các file mapping
+			<mapping resource="model/Category.hbm.xml"/>
+        	<mapping resource="model/Product.hbm.xml"/>
+	src/main/java
+		Tạo mới 1 Package: dao(data access object) để thực hiện các thao tác với CSDL
+			Tạo CategoryDAO Class
+		Tạo mới package main
+			Tạo mới class App.java
+	Hibernate Lifecycle
+		update() - merge()
+			session.update(category);
+			session.merge(category);
+		session.evict(category);
+		save() - persist()
