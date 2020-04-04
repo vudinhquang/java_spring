@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020/04/04 23:25:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.Product" table="product" catalog="hibernate">
+        <composite-id name="id" class="model.ProductId">
+            <key-property name="id" type="int">
+                <column name="ID" />
+            </key-property>
+            <key-property name="code" type="string">
+                <column name="CODE" length="100" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="NAME" />
+            </key-property>
+            <key-property name="cateId" type="int">
+                <column name="CATE_ID" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="category" class="model.Category" update="false" insert="false" fetch="select">
+            <column name="CATE_ID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

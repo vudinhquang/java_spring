@@ -36,3 +36,57 @@ Giới thiệu về JDBC
 	localhost/phpmyadmin
 		Tạo 1 Schema: jdbc-test
 		Tạo bảng student: id, Name, Age, Address
+
+==============================================================================================================
+								Hibernate
+
+Phần 1
+	JDBC giúp thực hiện các câu lệnh truy vấn như insert, update...
+	JDBC phụ thuộc vào hệ quản trị cơ sỏ dữ liệu, khi chuyển sang các hệ quản trị dữ liệu khác thì các câu truy vấn 
+		phải viết lại
+		Khi muốn lấy dữ liệu thì cần lấy từng cột một rồi mapping các trường muốn gán vào ở trong java
+	Hibernate là 1 ORM Framework thực hiện mapping từ CSDL sang các object trong java
+	Group id: come.tedu
+	Artifact Id: hibernate_ex
+	Packaging: war
+	Cấu hình Hibernate, tạo ra các object mapping từ cơ sở dữ liệu
+		MySQL connector
+		Hibernate
+			keyword: Hibernate maven 5.1
+		Để tạo ra các file mapping(Bằng tool)
+			Eclipse(help) -> Eclipse Marketplace -> Find: jboss
+				-> Cài đặt JBoss Tools 4.14	Final -> Hibernate Tools -> Restart lại Eclipse
+		Kết nối Eclipse với Database ứng dụng
+			Trường hợp không có Database Development
+				Don't have “Database Development Perspective” in Eclipse Java SE IDE
+			Eclipse(help) -> Install New Software
+				--All Available Sites--
+				Database Development
+			Eclipse(Open Perpective) -> Database Development -> Open
+				Database Connections -> New -> MySQL -> Name: hibernate_ex
+					Driver: MySQL JDBC Driver 5.1
+					Driver Name: MySQL JDBC Driver Hibernate
+					JAR List: 
+						keyword: MySQL connector 5.1 jar -> download
+						Add JAR
+					Database: hibernate
+					URL: jdbc:mysql://localhost:3306/hibernate
+					Test Connections(OK)
+			Eclipse(Open Perpective) -> Hibernate -> Add Configuration
+				Hibernate Version: 3.5
+				Project: hibernate_ex 
+				Database Connections: hibernate_ex
+				Configuration file: 
+					Setup -> create new -> resources
+						Hibernate Version: 3.5
+						Get values from Connections
+			hibernate -> Run(Hibernate Code Generation Configurations)
+				Hibernate Code Generation -> New_configuảtion
+					Main
+						Console configuration: hibernate
+						Output directory: hibernate_ex -> src -> main -> java
+						Reverse engineer from JDBC Connections
+						Package: model(Chứa các file mapping)
+					Exporters: 
+						Domain code
+						Hibernate XML Mapping
