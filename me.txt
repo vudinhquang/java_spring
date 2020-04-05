@@ -106,3 +106,15 @@ Phần 2
 			session.merge(category);
 		session.evict(category);
 		save() - persist()
+
+==============================================================================================================
+								Spring Core
+
+Phần 1
+	Dependency Injection
+	Group id: tedu.spring
+	Artifact Id: spring_ex
+	Packaging: war
+	src/main/java	
+		package: spring.ex
+	Source - Generate Getters and Setters
