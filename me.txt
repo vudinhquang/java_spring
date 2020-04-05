@@ -143,3 +143,10 @@ Phần 3
 		@Repository: Đánh dấu các lớp DAO, cung cấp dữ liệu cho ứng dụng
 		@Service: Gọi đến các lớp DAO
 	Namespaces: context
+
+==============================================================================================================
+								Mô hình MVC, luồng hoạt động của SpringMVC
+
+Model: Chứa thông tin đối tượng, tương tác với DB
+View: Giao diện hệ thống, tương tác với người dùng
+Controller: Nhận yêu cầu từ người dùng và sử dụng Model, View để xử lý và trả kết quả cho người dùng
