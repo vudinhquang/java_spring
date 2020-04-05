@@ -150,3 +150,73 @@ Phần 3
 Model: Chứa thông tin đối tượng, tương tác với DB
 View: Giao diện hệ thống, tương tác với người dùng
 Controller: Nhận yêu cầu từ người dùng và sử dụng Model, View để xử lý và trả kết quả cho người dùng
+
+==============================================================================================================
+								Thiết kế Database, mô tả chức năng của từng bảng
+
+Phân quyền gồm các bảng: USERS, ROLE, USER_ROLE, AUTH, MENU 
+Chức năng gồm các bảng: CATEGORY, PRODUCT_INFO, INVOICE, HISTORY, PRODUCT_IN_STOCK
+Schema: inventory_management
+Liên kết khóa ngoại:
+	user_role
+		userId_foreign_key
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: USER_ID
+			Database: inventory_management
+			Table: users
+			Column: ID
+		roleId_foreign_key
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: ROLE_ID
+			Database: inventory_management
+			Table: role
+			Column: ID
+	auth: 
+		roleId_foreignKey
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: ROLE_ID
+			Database: inventory_management
+			Table: role
+			Column: ID
+		menuId_foreignKey
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: MENU_ID
+			Database: inventory_management
+			Table: menu
+			Column: ID
+	product_info:
+		cateId_foreign_key
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: CATE_ID
+			Database: inventory_management
+			Table: category
+			Column: ID
+	product_in_stock:
+		productId_foreign_key
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: PRODUCT_ID
+			Database: inventory_management
+			Table: product_info
+			Column: ID
+	history 
+		productId_foreign_key_history
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: PRODUCT_ID
+			Database: inventory_management
+			Table: product_info
+			Column: ID
+	invoice 
+		productId_foreign_key_invoice
+			ON DELETE: RESTRICT
+			ON UPDATE: CASCADE
+			Column: PRODUCT_ID
+			Database: inventory_management
+			Table: product_info
+			Column: ID
