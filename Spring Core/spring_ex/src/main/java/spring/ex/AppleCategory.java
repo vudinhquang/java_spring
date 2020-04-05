@@ -1,5 +1,8 @@
 package spring.ex;
 
+import org.springframework.stereotype.Repository;
+
+@Repository("apple")
 public class AppleCategory implements ICategory {
 
 	public void printCategory() {

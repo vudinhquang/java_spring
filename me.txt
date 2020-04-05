@@ -134,3 +134,12 @@ Phần 2
 		<property name="category" ref="samsungCategory"></property>  -> Setters
 		<constructor-arg index="0" ref="appleCategory"></constructor-arg> -> Contructor 
 			index: Thứ tự của các parameter
+
+Phần 3
+	Định nghĩa các bean dựa vào các anotation
+	Có các anotation hay dùng:
+		@Autowire: Là 1 anotation tự động liên kết, Inject các object cần thiết vào trong đối tượng
+		@Component: Định nghĩa các thành phần mang tính phụ trợ cho việc thực thi các class
+		@Repository: Đánh dấu các lớp DAO, cung cấp dữ liệu cho ứng dụng
+		@Service: Gọi đến các lớp DAO
+	Namespaces: context

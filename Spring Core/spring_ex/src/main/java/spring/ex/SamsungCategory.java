@@ -1,5 +1,8 @@
 package spring.ex;
 
+import org.springframework.stereotype.Repository;
+
+@Repository("samsung")
 public class SamsungCategory implements ICategory {
 
 	public void printCategory() {
