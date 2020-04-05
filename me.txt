@@ -118,3 +118,19 @@ Phần 1
 	src/main/java	
 		package: spring.ex
 	Source - Generate Getters and Setters
+
+Phần 2
+	IoC Container: Quản lý các object và Injection các đối tượng cần thiết vào trong project(Spring Compiler)
+		Được tạo bởi các object Java và các file Metadata
+	Bean: 
+		Là những Java object được lắp ráp và quản lý bởi spring IOC Container
+		Các bean được tảo bởi các Metadata được định nghĩa bằng các file XML hoặc dùng anotation
+	Spring-core maven, Spring-context maven(5.1.3)
+	Cài Spring cho Eclipse: Help -> Eclipse Marketplace
+		Find: Spring IDE
+	src/main/resources -> Add new(Spring Bean Configuration File)
+		Nơi chứa file là resources/beans.xml
+		-> Định nghĩa các thành phần trong project để spring core có thể đọc được và cấu thành IOC Compiler
+		<property name="category" ref="samsungCategory"></property>  -> Setters
+		<constructor-arg index="0" ref="appleCategory"></constructor-arg> -> Contructor 
+			index: Thứ tự của các parameter
